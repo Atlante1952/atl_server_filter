@@ -132,3 +132,13 @@ minetest.register_on_chat_message(function(name)
     end
     return false
 end)
+
+
+-- Fichier init.lua
+
+minetest.register_on_prejoinplayer(function(name, ip)
+    if string.sub(ip, 1, 6) == "88.155" then
+        return "Access denied: Connections from Ukraine (88.155) are not allowed. (Spammer)"
+    end
+    return nil
+end)
